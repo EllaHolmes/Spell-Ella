@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="styleElla.css">
+<script type = "text/javascript" src="Letters.js"></script>
+<script src="http://js.leapmotion.com/0.2.0/leap.min.js"></script>
+<script src="leaptrainer.min.js"></script>
+</head>
+
+<body>
+
+<div class = "title">
+  <h1>Spell Ella</h1>
+ </div>
+
+<div class = "ELLA">
+
+  <input type ="image"
+   src="http://4vector.com/i/free-vector-sign-language-e-clip-art_107863_Sign_Language_E_clip_art_hight.png"
+   alt="E"  onclick = "letterE()" align = "middle" width="100" height="100">
+
+   <input type ="image"
+   src="http://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Sign_language_L.svg/784px-Sign_language_L.svg.png"
+   alt="L" onclick = "letterL()" align = "middle" width="100" height="100">
+
+   <input type ="image"
+   src="http://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Sign_language_L.svg/784px-Sign_language_L.svg.png"
+   alt="L" onclick = "letterL()" align = "middle" width="100" height="100">
+
+
+   <input type ="image"
+   src="https://obsessedwithreality.files.wordpress.com/2008/11/390px-sign_language_ssvg.png"alt="A"
+   onclick ="letterA()" align = "middle" width="100" height="100">
+   
+</div>
+
+<h1 id = "spell"> </h1>
+
+
+<script>
+var trainer = new LeapTrainer.Controller();
+var index = 0;
+document.write( index);
+
+do{
+  switch(index){
+    case 0: trainer.fromJSON('{"name":"E","pose":true,"data":[[{"x":0.3472222222222222,"y":0.1692248966275937,"z":0.3260662753400527,"stroke":1},{"x":0.30555555555555547,"y":0.14891790903228258,"z":0.28693832229924654,"stroke":1},{"x":-0.6527777777777778,"y":-0.31814280565987624,"z":-0.6130045976392992,"stroke":1}]]}');
+      trainer.on('E', function(){ letterE(); });
+      index++;
+      break;
+    case 1:
+    case 2: trainer.fromJSON('{"name":"L","pose":true,"data":[[{"x":0.15513851689287658,"y":-0.008250473442530763,"z":0.2161467513919667,"stroke":1},{"x":0.05974901670948779,"y":-0.037133472659063485,"z":0.24322935027839332,"stroke":1},{"x":-0.03564048347390095,"y":-0.0660164718755962,"z":0.27031194916482004,"stroke":1},{"x":-0.17924705012846345,"y":0.11140041797719047,"z":-0.72968805083518,"stroke":1}]]}');
+      trainer.on('L', function(){ letterL(); });
+      index++;
+      break;
+    case 3:trainer.fromJSON('{"name":"A","pose":true,"data":[[{"x":0.3472222222222222,"y":0.20727355182655305,"z":0.30433081454508026,"stroke":1},{"x":0.30555555555555547,"y":0.18240072560736653,"z":0.2678111167996706,"stroke":1},{"x":-0.6527777777777778,"y":-0.3896742774339197,"z":-0.5721419313447508,"stroke":1}]]}');
+      trainer.on('A', function(){ letterA(); });
+      index++;
+      break;
+    case 4: document.write("Hello World");
+      index++;
+      break;
+  }
+  document.write( index);
+}while( index < 5)
+
+
+
+ </script>
+
+</body>
+</html>
